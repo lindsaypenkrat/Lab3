@@ -54,7 +54,7 @@ let buildingData  = d3.csv('buildings.csv').then(data =>{
         .enter()
         .append('text')
         .attr('class', 'heightLables')
-        .attr('x', d => d.height_px)
+        .attr('x', d => d.height_px - -175)
         .attr('y', (d, i) => svgheight - 85 - (barHeight*i*1.5))
         .text((d, i) => d.height_ft + 'ft')
         .attr('font-size', 13)
