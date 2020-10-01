@@ -17,7 +17,7 @@ let data  = d3.csv('cities.csv', d3.autoType).then(data=>{
         .attr('cx', d=>d.x)
         .attr('cy', d=>d.y)
         .attr('r', d=> (d.population  < 1000000) ? 4 : 8)
-        .attr('fill', 'skyblue')
+        .attr('fill', '#7ea37e')
         
     svg.selectAll('text')
         .data(data)
