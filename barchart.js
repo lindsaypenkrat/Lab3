@@ -1,3 +1,5 @@
+//Part 2
+
 let buildingData  = d3.csv('buildings.csv').then(data =>{ 
     data.sort((d1,d2)=>d1.height_m - d2.height_m);
     console.log(data);

@@ -1,3 +1,4 @@
+//Part 1
 
 let data  = d3.csv('cities.csv', d3.autoType).then(data=>{
     data = data.filter(d=>d.eu == true);
