@@ -26,9 +26,9 @@ let data  = d3.csv('cities.csv', d3.autoType).then(data=>{
         .enter()
         .append('text')
         .attr('class', 'cityLabels')
-        .attr('x', d=>d.x - 30)
+        .attr('x', d=>d.x - 50)
         .attr('y', d=>d.y + 5 )
-        .text(d=>(d.population >= 1000000) ? d.city : '')
+        .text(d=>(d.population >= 1000000) ? d.country : '')
         .attr('font-size', 11)
         .attr('text-anchor', 'middle')     
         
