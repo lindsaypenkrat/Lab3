@@ -17,7 +17,7 @@ let buildingData  = d3.csv('buildings.csv').then(data =>{
         .attr('width', d=>d.height_px)
         .attr('height', barHeight)
         .attr('y', (d,i) =>  svgheight - 100 - (barHeight*i*1.5))
-        .attr('x', 150)
+        .attr('x', 180)
         .attr('fill', 'skyblue')
         .on('click', (d,i)=>{
             d3.select('.image')
@@ -42,10 +42,23 @@ let buildingData  = d3.csv('buildings.csv').then(data =>{
         .enter()
         .append('text')
         .attr('class', 'buildingLables')
-        .attr('x', d=>140)
+        .attr('x', d=>175)
         .attr('y', (d,i) =>  svgheight - 85 - (barHeight*i*1.5))
         .text(d=> d.building)
         .attr('font-size', 11)
         .attr('text-anchor', 'end')   
 
+    let heightLabels = svg
+        .selectAll('.height_label')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('class', 'heightLables')
+        .attr('x', d => d.height_px)
+        .attr('y', (d, i) => svgheight - 85 - (barHeight*i*1.5))
+        .text((d, i) => d.height_ft + 'ft')
+        .attr('font-size', 13)
+        .attr('text-anchor', 'end');
+
 });
+
